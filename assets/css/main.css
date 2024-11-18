@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
 
 /*
@@ -2215,6 +2215,23 @@ input, select, textarea {
 	}
 
 /* Icon */
+	.custom-icon-size {
+	  border: solid 1px;
+	  border-radius: 70%;
+	  font-size: 3em; /* Adjust this value to change the size of the icons */
+	  display: inline-flex; /* Use inline-flex to avoid the block-level behavior of flex */
+	  align-items: center;  /* Vertically center the icons */
+	  justify-content: center; /* Horizontally center the icons */
+	  font-size: 5.25rem;
+	  width: 2.25em;
+	  height: 2.25em;
+	  text-align: center; /* Ensure the icon is centered if it's within a larger block */
+	  margin: 0 auto; /* Ensure it is centered if in a block container */
+	}
+
+	.custom-icon-size i {
+	  font-size: inherit; /* Ensure the icon inherits the size from the container */
+	}
 
 	.icon {
 		text-decoration: none;
