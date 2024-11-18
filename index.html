@@ -13,6 +13,16 @@
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"> -->
 		<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
 		<!-- <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> -->
+		<style>
+			.rotate-on-hover {
+			  display: inline-flex; /* Ensures proper element behavior for animations */
+			  transition: transform 0.6s ease; /* Smooth transition for rotation */
+			}
+		
+			.rotate-on-hover:hover {
+			  transform: rotate(360deg); /* Rotate the icon fully on hover */
+			}
+		  </style>
 	</head>
 	<body class="is-preload">
 
@@ -35,7 +45,7 @@
 						<ul>
 							<li><a href="#intro" class="active">Introduction</a></li>
 							<li><a href="#first">Links</a></li>
-							<li><a href="#second">Research</a></li>
+							<!-- <li><a href="#second">Research</a></li> -->
 							<!-- <li><a href="#cta">Get Started</a></li> -->
 						</ul>
 					</nav>
@@ -69,42 +79,52 @@
 									<h2>Links</h2>
 								</header>
 								<ul class="features">
-									<!-- <li>
-										<span class="icon solid major style1 fa-code"></span>
-										<h3>Ipsum consequat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li> -->
 									<li>
-										<a href="https://drive.google.com/file/d/1OIOVvbBVR3WkFjJpvssz9NauDrC8Vue5/view?usp=sharing" target="_blank" style="text-decoration: none; color: inherit;">
-										<span  class="icon style2 fa-file-alt custom-icon-size"></span>
-										<h3>CV</h3>
-										<p>Link to my extended Curriculum Vitae.</p>
+										<span  class="icon style1 custom-icon-size rotate-on-hover">
+										<a href="generic.html" style="text-decoration: none; outline:none;">									
+										  <i class="fa-solid fa-shuttle-space" onmouseover="this.style.color='#008080'" 
+										  onmouseout="this.style.color='inherit'"></i>
+										  <!-- <i class=""></i> -->
+										</span>
 										</a>
+										<h3>My Research</h3>
+										<p>Breif Description to My Research.</p>
 									</li>
 									<li>
-										<a href="https://orcid.org/0000-0002-9497-8856" >
-										<span class="icon style3 custom-icon-size">
-										  <i class="fab fa-orcid"></i>
+										<span  class="icon style2 custom-icon-size rotate-on-hover">
+										<a href="https://drive.google.com/file/d/1OIOVvbBVR3WkFjJpvssz9NauDrC8Vue5/view?usp=sharing" style="text-decoration: none; outline:none;">									
+										  <i class="fas fa-file-pdf" onmouseover="this.style.color='#008080'" 
+										  onmouseout="this.style.color='inherit'"></i>
 										</span>
-										<h3>ORCID</h3>
 										</a>
+										<h3>CV</h3>
+										<p>Link to my extended Curriculum Vitae.</p>
+									</li>
+									<li>
+										<span class="icon style4 custom-icon-size rotate-on-hover">
+										<a href="https://orcid.org/0000-0002-9497-8856" style="text-decoration:none; outline:none;">
+										  <i class="fab fa-orcid" onmouseover="this.style.color='#008080'" 
+										  onmouseout="this.style.color='inherit'"></i>
+										</span>
+										</a>
+										<h3>ORCID</h3>
 										<p>Connect with me on ORCID to explore my research profile.</p>
 									  </li>
 								</ul>
-								<footer class="major">
+								<!-- <footer class="major">
 									<ul class="actions special">
 										<li><a href="generic.html" class="button">Learn More</a></li>
 									</ul>
-								</footer>
+								</footer> -->
 							</section>
 
 						<!-- Second Section -->
-							<section id="second" class="main special">
+							<!-- <section id="second" class="main special">
 								<header class="major">
-									<h2>Ipsum consequat</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
+									<h2>Research</h2>
+									<p>Under Construction<br />
+									</p> -->
+								<!-- </header>
 								<ul class="statistics">
 									<li class="style1">
 										<span class="icon solid fa-code-branch"></span>
@@ -132,7 +152,7 @@
 									<ul class="actions special">
 										<li><a href="generic.html" class="button">Learn More</a></li>
 									</ul>
-								</footer>
+								</footer> -->
 							</section>
 
 						<!-- Get Started -->
@@ -166,24 +186,32 @@
 							</ul> -->
 						</section>
 						<section>
-							<h2>Etiam feugiat</h2>
+							<h2>Contact Me</h2>
 							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
+								<dt style="display: flex; align-items: center; font-weight: bold; margin-bottom: 8px;">
+								  <span class="fa-solid fa-phone" style="margin-right: 8px; font-size: 1.2em;"></span>
+								  Phone
+								</dt>
+								<dd style="margin: 20 0 16px;">+91 827 357 8118</dd>
+							  
+								<dt style="display: flex; align-items: center; font-weight: bold; margin-bottom: 8px;">
+								  <span class="fa-solid fa-envelope" style="margin-right: 8px; font-size: 1.2em;"></span>
+								  Email
+								</dt>
+								<dd style="margin: 20 0 16px;">
+								  <a href="mailto:tyagihimanshu027@gmail.com" style="text-decoration: none; color: inherit;">tyagihimanshu027@gmail.com</a>
+								</dd>
+							  </dl>
+							  
 							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+								<li><a href="https://x.com/Its_him_t" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<!-- <li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li> -->
+								<!-- <li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li> -->
+								<li><a href="https://github.com/its-him" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.researchgate.net/profile/Himanshu-Tyagi-18" class="icon brands fab fa-researchgate alt"><span class="label">Dribbble</span></a></li>
 							</ul>
 						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; Himanshu Tyagi. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
