@@ -120,8 +120,9 @@ input, select, textarea {
 /* Type */
 
 	body {
-		background-color: #935d8c;
+		background-color: #935d8c00;
 		color: rgba(255, 255, 255, 0.65);
+		/* background-image: url("images/STScI-01H530BR24BZMXSY06PCR4E1EC.jpg"); */
 	}
 
 	body, input, select, textarea {

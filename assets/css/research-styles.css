@@ -1,0 +1,280 @@
+/* ===================================
+   Research Page Styles
+   =================================== */
+
+/* Research Hero Section */
+.research-hero {
+	position: relative;
+	margin-bottom: 3rem;
+}
+
+.research-hero .image-overlay {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.research-hero .image-overlay img {
+	transition: transform 0.5s ease;
+}
+
+.research-hero .image-overlay:hover img {
+	transform: scale(1.05);
+}
+
+/* Research Cards Grid */
+.research-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	margin: 3rem 0;
+}
+
+.research-card {
+	background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+	padding: 2rem;
+	border-radius: 12px;
+	border-top: 4px solid #8cc9f0;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.research-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, rgba(140, 201, 240, 0.05) 0%, transparent 100%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.research-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 8px 25px rgba(140, 201, 240, 0.2);
+}
+
+.research-card:hover::before {
+	opacity: 1;
+}
+
+.research-card-icon {
+	font-size: 3em;
+	color: #8cc9f0;
+	margin-bottom: 1rem;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+.research-card:hover .research-card-icon {
+	transform: scale(1.1) rotate(5deg);
+}
+
+.research-card h3 {
+	color: #8cc9f0;
+	margin-bottom: 1rem;
+	font-size: 1.4em;
+	font-weight: 600;
+}
+
+.research-card p {
+	color: #555;
+	line-height: 1.8;
+	margin: 0;
+}
+
+/* Facilities Grid */
+.facilities-showcase {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+
+.facility-badge {
+	background: white;
+	padding: 1.5rem;
+	border-radius: 10px;
+	text-align: center;
+	border: 2px solid #e0e0e0;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.facility-badge:hover {
+	border-color: #8cc9f0;
+	box-shadow: 0 6px 20px rgba(140, 201, 240, 0.15);
+	transform: translateY(-5px);
+}
+
+.facility-badge .facility-name {
+	font-weight: 700;
+	font-size: 1.3em;
+	color: #8cc9f0;
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.facility-badge .facility-desc {
+	font-size: 0.9em;
+	color: #666;
+	line-height: 1.6;
+}
+
+/* Projects Section */
+.projects-list {
+	list-style: none;
+	padding: 0;
+	margin: 2rem 0;
+}
+
+.project-item {
+	background: white;
+	padding: 1.5rem 2rem;
+	margin-bottom: 1.5rem;
+	border-left: 5px solid #8cc9f0;
+	border-radius: 6px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+	transition: all 0.3s ease;
+}
+
+.project-item:hover {
+	box-shadow: 0 5px 20px rgba(140, 201, 240, 0.15);
+	transform: translateX(5px);
+}
+
+.project-item .project-badge {
+	display: inline-block;
+	background: #8cc9f0;
+	color: white;
+	padding: 0.3rem 0.8rem;
+	border-radius: 20px;
+	font-size: 0.75em;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 0.8rem;
+}
+
+.project-item h4 {
+	color: #333;
+	margin: 0.5rem 0;
+	font-size: 1.2em;
+}
+
+.project-item p {
+	color: #666;
+	margin: 0.5rem 0 0 0;
+	line-height: 1.7;
+}
+
+/* Stats Section */
+.research-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	margin: 2rem 0;
+	text-align: center;
+}
+
+.stat-box {
+	background: linear-gradient(135deg, #8cc9f0 0%, #9bb2e1 100%);
+	padding: 2rem 1.5rem;
+	border-radius: 12px;
+	color: white;
+	box-shadow: 0 6px 20px rgba(140, 201, 240, 0.3);
+	transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+	transform: translateY(-5px);
+}
+
+.stat-number {
+	font-size: 3em;
+	font-weight: 700;
+	display: block;
+	margin-bottom: 0.5rem;
+	line-height: 1;
+}
+
+.stat-label {
+	font-size: 0.95em;
+	opacity: 0.95;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 500;
+}
+
+/* Section Headers */
+.section-header {
+	text-align: center;
+	margin: 3rem 0 2rem;
+}
+
+.section-header h2 {
+	font-size: 2.5em;
+	color: #8cc9f0;
+	margin-bottom: 1rem;
+	position: relative;
+	display: inline-block;
+}
+
+.section-header h2::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	height: 3px;
+	background: linear-gradient(90deg, transparent, #8cc9f0, transparent);
+}
+
+.section-header p {
+	font-size: 1.1em;
+	color: #666;
+	max-width: 700px;
+	margin: 1rem auto 0;
+	line-height: 1.7;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+	.research-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.facilities-showcase {
+		grid-template-columns: 1fr;
+	}
+
+	.research-stats {
+		grid-template-columns: 1fr;
+	}
+
+	.research-card,
+	.facility-badge,
+	.project-item {
+		padding: 1.5rem;
+	}
+
+	.section-header h2 {
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.research-card-icon {
+		font-size: 2.5em;
+	}
+
+	.stat-number {
+		font-size: 2.5em;
+	}
+}
