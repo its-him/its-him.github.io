@@ -12,6 +12,8 @@
 		<meta name="keywords" content="astronomy, astrophysics, TIFR, protostar, JWST, ALMA, uGMRT, jets, winds" />
 		<meta name="author" content="Himanshu Tyagi" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<meta property="og:title" content="Himanshu Tyagi - PhD Astronomer" />
 		<meta property="og:description" content="Observational astronomy researcher studying protostellar jets and winds at TIFR." />
 		<meta name="twitter:card" content="summary" />
@@ -139,20 +141,20 @@
 		</div>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script defer src="assets/js/jquery.min.js"></script>
+		<script defer src="assets/js/jquery.scrollex.min.js"></script>
+		<script defer src="assets/js/jquery.scrolly.min.js"></script>
+		<script defer src="assets/js/browser.min.js"></script>
+		<script defer src="assets/js/breakpoints.min.js"></script>
+		<script defer src="assets/js/util.js"></script>
+		<script defer src="assets/js/main.js"></script>
 		<script>
 			window.onload = function() { document.body.classList.remove('is-preload'); }
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 			
-			// Initialize smooth scrolling for scroll arrow
-			$('.scroll-arrow').scrolly({ offset: 0 });
+			// Initialize smooth scrolling for scroll arrow with duration
+			$('.scroll-arrow').scrolly({ speed: 600, offset: 0 });
 		</script>
 
 	</body>
