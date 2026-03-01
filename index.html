@@ -154,7 +154,12 @@
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 			
 			// Initialize smooth scrolling for scroll arrow with duration
-			$('.scroll-arrow').scrolly({ speed: 600, offset: 0 });
+			// Wait for jQuery and all plugins to load
+			document.addEventListener('DOMContentLoaded', function() {
+				if (typeof jQuery !== 'undefined') {
+					jQuery('.scroll-arrow').scrolly({ speed: 600, offset: 0 });
+				}
+			});
 		</script>
 
 	</body>

@@ -232,7 +232,7 @@
 	left: 50%;
 	transform: translateX(-50%);
 	width: 60%;
-	height: 3px;
+	height: 2px;
 	background: linear-gradient(90deg, transparent, #8cc9f0, transparent);
 }
 
