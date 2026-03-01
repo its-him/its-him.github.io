@@ -38,11 +38,30 @@
 						mode: 'top',
 						enter: function() {
 							$nav.addClass('alt');
+							$body.addClass('nav-alt');
 						},
 						leave: function() {
 							$nav.removeClass('alt');
+							$body.removeClass('nav-alt');
 						},
 					});
+
+				// Ensure nav-alt state is synced on load/scroll as a fallback for Scrollex
+				(function() {
+					function syncNavAlt() {
+						var scrolled = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+						// If scrolled past 20px or nav has 'alt' class, mark body with nav-alt
+						if (scrolled > 20 || $nav.hasClass('alt')) {
+							$body.addClass('nav-alt');
+						} else {
+							$body.removeClass('nav-alt');
+						}
+					}
+
+					// Run on load and on scroll/resize
+					syncNavAlt();
+					$window.on('scroll resize', function() { syncNavAlt(); });
+				})();
 
 			// Links.
 				var $nav_a = $nav.find('a');
@@ -112,6 +131,41 @@
 							});
 
 					});
+
+
+
+
+			// Mobile: insert a hamburger toggle that toggles `body.nav-open`.
+				// This keeps markup changes out of other pages and ensures consistent behavior.
+				(function() {
+					var $body = $('body');
+					var $toggle = $('<button id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span class="fa-solid fa-bars" aria-hidden="true"></span></button>');
+					// Insert toggle before nav so it's visible in top-right.
+					$nav.before($toggle);
+
+					$toggle.on('click', function(e) {
+						e.preventDefault();
+						var open = $body.hasClass('nav-open');
+						$body.toggleClass('nav-open', !open);
+						$toggle.attr('aria-expanded', String(!open));
+					});
+
+					// Close nav when a nav link is clicked (on small screens)
+					$nav.find('a').on('click', function() {
+						if (window.matchMedia('(max-width: 768px)').matches) {
+							$body.removeClass('nav-open');
+							$toggle.attr('aria-expanded', 'false');
+						}
+					});
+
+					// Close nav if window expanded beyond mobile
+					$window.on('resize', function() {
+						if (!window.matchMedia('(max-width: 768px)').matches) {
+							$body.removeClass('nav-open');
+							$toggle.attr('aria-expanded', 'false');
+						}
+					});
+				})();
 
 		}
 

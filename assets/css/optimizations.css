@@ -77,6 +77,13 @@
 	text-align: center;
 }
 
+/* Ensure nav sits above the hero on small screens and links are visible */
+#nav {
+	position: relative;
+	z-index: 1000;
+	padding: 0.5em 0;
+}
+
 #nav ul {
 	display: inline-block;
 	list-style: none;
@@ -89,10 +96,20 @@
 	margin: 0 20px;
 }
 
+/* Default: nav links are light so they're visible over the hero/top of page */
 #nav a {
 	text-decoration: none;
 	outline: none;
 	transition: color 0.3s ease;
+	color: #ffffff;
+	background: transparent;
+	padding: 0.35em 0.6em;
+	display: inline-block;
+}
+
+/* When nav has a light background (alt) ensure links are dark for contrast */
+#nav.alt a {
+	color: #111 !important;
 }
 
 #nav a:hover {
@@ -178,6 +195,134 @@
 		flex-direction: column;
 		align-items: flex-start;
 	}
+}
+
+/* Mobile: make nav fixed and readable over hero */
+@media screen and (max-width: 768px) {
+	/* Mobile: nav hidden by collapsing its max-height; animate via max-height/opacity/transform */
+	#nav {
+		display: block;
+		position: fixed;
+		/* position under the toggle (appear to come out of hamburger)
+		   right-aligned dropdown instead of full-width */
+		top: 3.2em; /* below the toggle */
+		right: 1em;
+		left: auto;
+		width: 220px;
+		z-index: 10000;
+		background: rgba(0,0,0,0.9);
+		padding: 0.5em 0;
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transform: translateY(-8px) scaleY(0.98);
+		transform-origin: top right;
+		border-radius: 8px;
+		box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+		transition: max-height 360ms ease, opacity 360ms ease, transform 360ms ease;
+	}
+
+	/* Show nav when toggled open (animated) */
+	body.nav-open #nav {
+		max-height: 520px; /* large enough to show stacked items */
+		opacity: 1;
+		transform: translateY(0) scaleY(1);
+	}
+
+	/* Ensure nav items stack and are tappable */
+	#nav ul {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	#nav ul li {
+		display: block;
+		margin: 0.25em 0;
+	}
+
+	#nav ul li a {
+		color: #ffffff;
+		display: inline-block;
+		padding: 0.6em 1em;
+		font-size: 0.95em;
+	}
+
+	/* add page top offset only when nav is open so content isn't hidden under fixed nav */
+	body.nav-open {
+		/* dropdown appears from hamburger; no page offset needed */
+		padding-top: 0;
+	}
+}
+
+/* Hamburger toggle button - hidden on larger screens */
+#navToggle {
+	display: none;
+	position: fixed;
+	top: 0.6em;
+	right: 1em;
+	z-index: 10001;
+	background: transparent;
+	border: 0;
+	color: #fff;
+	font-size: 1.6em;
+	line-height: 1;
+	padding: 0.25em;
+}
+
+@media screen and (max-width: 768px) {
+	#navToggle {
+		display: block;
+	}
+}
+
+/* Highlight the hamburger when menu is open */
+body.nav-open #navToggle {
+	color: #8cc9f0;
+	background: rgba(255,255,255,0.06);
+	border-radius: 6px;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Stronger rules targeting the Font Awesome icon inside the toggle to avoid overrides */
+body.nav-open #navToggle,
+body.nav-open #navToggle .fa-solid {
+	color: #8cc9f0 !important;
+	background: rgba(255,255,255,0.06) !important;
+}
+
+body.nav-alt #navToggle,
+body.nav-alt #navToggle .fa-solid {
+	color: #111 !important;
+	background: rgba(255,255,255,0.95) !important;
+}
+
+#navToggle, #navToggle .fa-solid {
+	transition: color 200ms ease, background 200ms ease;
+}
+
+/* When the nav is in the scrolled 'alt' state on mobile, show lighter background and dark links */
+@media screen and (max-width: 768px) {
+	#nav.alt {
+		background: rgba(247,247,247,0.95);
+		/* ensure alt uses the same dropdown positioning on mobile */
+		top: 3.2em;
+		right: 1em;
+		left: auto;
+		width: 220px;
+	}
+
+	#nav.alt a {
+		color: #111 !important;
+	}
+}
+
+/* Make the hamburger dark when scrolled into light regions */
+body.nav-alt #navToggle {
+	color: #111;
+	background: rgba(255,255,255,0.95);
 }
 
 /* Accessibility - Focus styles for keyboard navigation */
