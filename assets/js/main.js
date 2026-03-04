@@ -25,6 +25,85 @@
 			$body.removeClass('is-preload');
 		});
 
+	// Theme toggle.
+		var THEME_STORAGE_KEY = 'site-theme';
+		var $themeToggle = $();
+
+		function readStoredTheme() {
+			try {
+				return window.localStorage.getItem(THEME_STORAGE_KEY);
+			} catch (error) {
+				return null;
+			}
+		}
+
+		function writeStoredTheme(theme) {
+			try {
+				window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+			} catch (error) {
+				return;
+			}
+		}
+
+		function getPreferredTheme() {
+			var storedTheme = readStoredTheme();
+			if (storedTheme === 'dark' || storedTheme === 'light')
+				return storedTheme;
+
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+				return 'dark';
+
+			return 'light';
+		}
+
+		function updateThemeToggle(theme) {
+			if (!$themeToggle.length)
+				return;
+
+			var isDark = theme === 'dark';
+			var label = isDark ? 'Light mode' : 'Dark mode';
+			var iconClass = isDark ? 'fas fa-sun' : 'fas fa-moon';
+
+			$themeToggle.attr('aria-pressed', String(isDark));
+			$themeToggle.attr('aria-label', label);
+			$themeToggle.find('.theme-label').text(label);
+			$themeToggle.find('.theme-icon').attr('class', 'theme-icon ' + iconClass);
+		}
+
+		function applyTheme(theme) {
+			var nextTheme = (theme === 'dark') ? 'dark' : 'light';
+			$body.toggleClass('theme-dark', nextTheme === 'dark');
+			$body.attr('data-theme', nextTheme);
+			updateThemeToggle(nextTheme);
+		}
+
+		$themeToggle = $('<button id="themeToggle" type="button" aria-pressed="false" aria-label="Dark mode"><span class="theme-icon fas fa-moon" aria-hidden="true"></span><span class="theme-label">Dark mode</span></button>');
+		$body.append($themeToggle);
+		applyTheme(getPreferredTheme());
+
+		$themeToggle.on('click', function(event) {
+			event.preventDefault();
+			var nextTheme = $body.hasClass('theme-dark') ? 'light' : 'dark';
+			applyTheme(nextTheme);
+			writeStoredTheme(nextTheme);
+		});
+
+		if (window.matchMedia) {
+			var themeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+			var onSystemThemeChange = function(event) {
+				var storedTheme = readStoredTheme();
+				if (storedTheme === 'dark' || storedTheme === 'light')
+					return;
+
+				applyTheme(event.matches ? 'dark' : 'light');
+			};
+
+			if (typeof themeMediaQuery.addEventListener === 'function')
+				themeMediaQuery.addEventListener('change', onSystemThemeChange);
+			else if (typeof themeMediaQuery.addListener === 'function')
+				themeMediaQuery.addListener(onSystemThemeChange);
+		}
+
 	// Nav.
 		var $nav = $('#nav');
 

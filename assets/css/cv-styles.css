@@ -523,6 +523,91 @@
 	letter-spacing: 1px;
 }
 
+/* Dark Mode Overrides */
+body.theme-dark .cv-header h1,
+body.theme-dark .cv-subtitle,
+body.theme-dark .cv-institution {
+	color: #e7eefb;
+}
+
+body.theme-dark .section-title,
+body.theme-dark .section-title i,
+body.theme-dark .contact-resume h3,
+body.theme-dark .contact-resume i,
+body.theme-dark .resume-header .degree,
+body.theme-dark .institution,
+body.theme-dark .facility-card h4,
+body.theme-dark .skill-category h4,
+body.theme-dark .research-list strong,
+body.theme-dark .cta-section h3,
+body.theme-dark .stat-number {
+	color: #9fd8ff;
+}
+
+body.theme-dark .resume-section {
+	background: #172233;
+	border-left-color: #8cc9f0;
+}
+
+body.theme-dark .contact-resume,
+body.theme-dark .resume-item,
+body.theme-dark .facility-card,
+body.theme-dark .skill-category,
+body.theme-dark .stat-item {
+	background: #1b2738;
+	border-color: rgba(190, 205, 229, 0.24);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.theme-dark .contact-resume p,
+body.theme-dark .description,
+body.theme-dark .research-list li,
+body.theme-dark .facility-card p,
+body.theme-dark .skill-category li,
+body.theme-dark .highlight-text,
+body.theme-dark .cta-section p,
+body.theme-dark .stat-label {
+	color: #d0dced;
+}
+
+body.theme-dark .contact-resume a,
+body.theme-dark .highlight-text a {
+	color: #9fd8ff;
+}
+
+body.theme-dark .contact-resume a:hover,
+body.theme-dark .highlight-text a:hover {
+	color: #c3e8ff;
+}
+
+body.theme-dark .resume-header .date {
+	background: rgba(159, 216, 255, 0.14);
+	color: #9fd8ff;
+}
+
+body.theme-dark .research-list li {
+	border-bottom-color: rgba(190, 205, 229, 0.24);
+}
+
+body.theme-dark .highlight-text {
+	background: rgba(159, 216, 255, 0.08);
+	border-left-color: #8cc9f0;
+}
+
+body.theme-dark .cta-section {
+	background: linear-gradient(135deg, rgba(140, 201, 240, 0.14) 0%, rgba(140, 201, 240, 0.06) 100%);
+}
+
+body.theme-dark .pdf-container .button {
+	background: #102038;
+	color: #cfe8ff;
+}
+
+body.theme-dark .pdf-container .button:hover {
+	background: #153257;
+	color: #eff8ff;
+}
+
 /* Print Styles */
 @media print {
 	.pdf-download-section,
