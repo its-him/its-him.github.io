@@ -139,7 +139,7 @@
 				// This keeps markup changes out of other pages and ensures consistent behavior.
 				(function() {
 					var $body = $('body');
-					var $toggle = $('<button id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span class="fa-solid fa-bars" aria-hidden="true"></span></button>');
+					var $toggle = $('<button id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span class="fas fa-bars" aria-hidden="true"></span></button>');
 					// Insert toggle before nav so it's visible in top-right.
 					$nav.before($toggle);
 

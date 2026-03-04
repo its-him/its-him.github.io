@@ -288,18 +288,18 @@ body.nav-open #navToggle {
 
 /* Stronger rules targeting the Font Awesome icon inside the toggle to avoid overrides */
 body.nav-open #navToggle,
-body.nav-open #navToggle .fa-solid {
+body.nav-open #navToggle .fas {
 	color: #8cc9f0 !important;
 	background: rgba(255,255,255,0.06) !important;
 }
 
 body.nav-alt #navToggle,
-body.nav-alt #navToggle .fa-solid {
+body.nav-alt #navToggle .fas {
 	color: #111 !important;
 	background: rgba(255,255,255,0.95) !important;
 }
 
-#navToggle, #navToggle .fa-solid {
+#navToggle, #navToggle .fas {
 	transition: color 200ms ease, background 200ms ease;
 }
 
