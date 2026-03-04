@@ -13,7 +13,10 @@
 		<meta name="author" content="Himanshu Tyagi" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" />
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+		<noscript><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet" /></noscript>
 		<meta property="og:title" content="Himanshu Tyagi - PhD Astronomer" />
 		<meta property="og:description" content="Observational astronomy researcher studying protostellar jets and winds at TIFR." />
 		<meta name="twitter:card" content="summary" />
@@ -32,7 +35,7 @@
 				<picture>
 					<source type="image/webp" srcset="images/2000x1633@400.webp 400w, images/2000x1633@800.webp 800w, images/2000x1633@1200.webp 1200w, images/2000x1633.webp 1658w" sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px">
 					<source type="image/jpeg" srcset="images/2000x1633@400.jpg 400w, images/2000x1633@800.jpg 800w, images/2000x1633@1200.jpg 1200w, images/2000x1633.jpg 1658w" sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px">
-					<img src="images/2000x1633@1200.jpg" alt="Himanshu Tyagi - Astronomy Researcher" class="hero-image" loading="lazy">
+					<img src="images/2000x1633@1200.jpg" alt="Himanshu Tyagi - Astronomy Researcher" class="hero-image" loading="eager" fetchpriority="high" decoding="async">
 				</picture>
 				<!-- Text Overlay -->
 				<h1 class="hero-title">Himanshu Tyagi</h1>
@@ -153,16 +156,13 @@
 		<script defer src="assets/js/util.js"></script>
 		<script defer src="assets/js/main.js"></script>
 		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-			
-			// Initialize smooth scrolling for scroll arrow with duration
-			// Wait for jQuery and all plugins to load
 			document.addEventListener('DOMContentLoaded', function() {
+				document.body.classList.remove('is-preload');
 				if (typeof jQuery !== 'undefined') {
 					jQuery('.scroll-arrow').scrolly({ speed: 600, offset: 0 });
 				}
 			});
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
 
 	</body>
