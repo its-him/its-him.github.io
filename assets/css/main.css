@@ -1,5 +1,5 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
-@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
+/* Removed @import of external resources to avoid render-blocking imports.
+	Font Awesome and Google Fonts are loaded via <link> in HTML head. */
 
 /*
 	Stellar by HTML5 UP

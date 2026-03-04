@@ -12,14 +12,14 @@
 		<meta name="keywords" content="astronomy, astrophysics, TIFR, protostar, JWST, ALMA, uGMRT, jets, winds" />
 		<meta name="author" content="Himanshu Tyagi" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet" />
 		<meta property="og:title" content="Himanshu Tyagi - PhD Astronomer" />
 		<meta property="og:description" content="Observational astronomy researcher studying protostellar jets and winds at TIFR." />
 		<meta name="twitter:card" content="summary" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/optimizations.css" />
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+			<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -28,8 +28,12 @@
 		<div id="wrapper">
 			<!-- Hero Banner -->
 			<div class="hero-banner">
-				<!-- Image with zoom effect -->
-				<img src="images/2000x1633.jpg" alt="Himanshu Tyagi - Astronomy Researcher" class="hero-image" loading="lazy">
+				<!-- Responsive image with zoom effect -->
+				<picture>
+					<source type="image/webp" srcset="images/2000x1633@400.webp 400w, images/2000x1633@800.webp 800w, images/2000x1633@1200.webp 1200w, images/2000x1633.webp 1658w" sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px">
+					<source type="image/jpeg" srcset="images/2000x1633@400.jpg 400w, images/2000x1633@800.jpg 800w, images/2000x1633@1200.jpg 1200w, images/2000x1633.jpg 1658w" sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px">
+					<img src="images/2000x1633@1200.jpg" alt="Himanshu Tyagi - Astronomy Researcher" class="hero-image" loading="lazy">
+				</picture>
 				<!-- Text Overlay -->
 				<h1 class="hero-title">Himanshu Tyagi</h1>
 				<!-- Scroll Down Arrow -->
